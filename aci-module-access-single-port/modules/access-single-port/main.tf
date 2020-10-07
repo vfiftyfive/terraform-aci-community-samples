@@ -10,13 +10,6 @@ variable "policy_group_name" {}
 variable "hintfpol_dn" {}
 variable "user_physdom_dn" {}
 
-provider "aci" {
-  username = var.username
-  password = var.password
-  url      = var.url
-  insecure = true
-}
-
 resource "aci_lldp_interface_policy" "lldp_on" {
   name        = "tf-lldp-on"
   admin_rx_st = "enabled"
